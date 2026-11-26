@@ -12,7 +12,7 @@ Problem 6: Matrix Class (My_matrix)
 
 class My_matrix:
     def __init__(self, data: list[list[int | float]]):
-        if not data or not data:
+        if not data or not data[0]:
             raise ValueError("Матрица не может быть пустой")
 
         row_length = len(data)
@@ -28,7 +28,7 @@ class My_matrix:
 
     @property
     def columns(self) -> int:
-        return len(self.data)
+        return len(self.data[0])
 
     def __iter__(self):
         return iter(self.data)
@@ -116,7 +116,7 @@ if __name__ == "__main__":
     print("Матрица m1:")
     print(m1)
     print("Строк:", m1.rows, "Столбцов:", m1.columns)
-    print("Элемент [2][0]:", m1)
+    print("Элемент [2][0]:", m1[2][0])
     print("Квадратная:", m1.is_square())
     print("След матрицы m1:", m1.trace())
 
